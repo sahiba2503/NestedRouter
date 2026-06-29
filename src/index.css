@@ -9,3 +9,12 @@
 .navList span{
 margin-right: 2rem;
 }
+.routerContainer{
+    display: flex;
+    flex-direction: row;
+}
+.sideNavList{
+    border: 1px solid black;
+    width: 25%;
+    height: 95vh;
+}
