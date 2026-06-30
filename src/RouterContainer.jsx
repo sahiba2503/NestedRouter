@@ -15,6 +15,7 @@ function RouterContainer() {
       <SideNavbar />
       <Routes>
         <Route path = "/" element = {<Home/>}>
+        <Route index element={<HomeListItemA/>} />
 
         <Route path = "aaa" element = {<HomeListItemA/>}/>
         <Route path = "bbb" element = {<HomeListItemB/>}/>
@@ -29,3 +30,6 @@ function RouterContainer() {
 }
 
 export default RouterContainer
+
+
+

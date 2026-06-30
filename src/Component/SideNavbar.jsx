@@ -6,9 +6,9 @@ function SideNavbar() {
   return (
     <div className='sideNavList'>
       <ul>
-        <li onClick={()=>{ navigate("/aaa") }}>aaaaaaaaaaaaaaa</li>
-        <li onClick={()=>{ navigate("/bbb") }}>bbbbbbbbbbbbbb</li>
-        <li onClick={()=>{ navigate("/ccc") }}>ccccccccccccccc</li>
+        <li onClick={()=>{ navigate("/aaa") }}>aaaaaa</li>
+        <li onClick={()=>{ navigate("/bbb") }}>bbbbbb</li>
+        <li onClick={()=>{ navigate("/ccc") }}>cccccc</li>
       </ul>
     </div>
   )
