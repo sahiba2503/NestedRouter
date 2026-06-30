@@ -1,28 +1,81 @@
-import React from 'react'
+import React from "react";
+import { useState } from "react";
 
 function HomeListItemB() {
-  let num = 11;
-  let str = "sahiba";
-  let arr = [1,2,3,4,5];
-  arr.push(6);
-  str="sabina";
-  num = 13;
-function updateData(){
-  num = 55;
-  str = "saniya";
-  arr = [1,2,3,4,5,6];
-}
+  let [details, setDetails] = useState([
+    { id: 1, name: "sahiba",job:"A" },
+    { id: 2, name: "sana",job:"B" },
+    { id: 3, name: "sama" ,job:"C"},
+  ]);
+  
+
+  let [details2, setDetails2] = useState([
+    { id: 1, name: "name1" },
+    { id: 2, name: "name2" },
+    { id: 3, name: "name3" },
+  ]);
+
+  let updateData = () => {
+    let newDetails = details.map((detail, i) => {
+      return { ...detail, name: "newName" };
+      // or  return {
+      //   id: detail.id,
+      //   name: "newName",
+      // };
+      //or
+    // setDetails([
+  //details[0],
+  //{ id: 2, name: "New Name" },
+  //details[2]
+//]);
+    });
+    setDetails(newDetails);
+  };
+
+  let RemoveListItem = () => {
+    let updatedlistItem = details2.filter((det) => {
+      return det.id !== 2;
+    });
+    setDetails2(updatedlistItem);
+  };
+
+  let UpdateJob = ()=>{
+    let newjob = details.map((list)=>{
+      if(list.job === "C"){
+        return {...list,job:"A"}
+      }
+      else{
+        return list;
+      }
+    })
+    setDetails(newjob);
+  }
+
   return (
     <div className=''>
       <div>data type pringt through js expreasion in home page list (b)</div>
       <br></br>
-      <div>{num}</div>
-      <div>{str}</div>
-      <div>{arr}</div>
-      <button onClick={updateData}>click</button>
-      
+
+      <div>
+        {details.map((detail) => {
+          return <li>{detail.name} job - {detail.job}</li>;
+        })}
+      </div>
+
+      <div>
+        {details2.map((detail) => {
+          return (
+            <div>
+              {detail.name}-----{detail.id}{" "}
+            </div>
+          );
+        })}
+      </div>
+       <button onClick={UpdateJob}>job update click</button>
+      <button onClick={updateData}>name update click</button>
+      <button onClick={RemoveListItem}> remove detail click</button>
     </div>
-  )
+  );
 }
 
-export default HomeListItemB
+export default HomeListItemB;
