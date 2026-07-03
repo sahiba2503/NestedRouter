@@ -1,14 +1,14 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import React from "react";
+import { useNavigate } from "react-router-dom";
 function Navlist() {
-    let navigate = useNavigate();
-      return (
+  let navigate = useNavigate();
+  return (
     <div className='navList'>
-        <span onClick={()=>navigate("/")}>Home</span>
-      <span onClick={()=>navigate("/About")}>About</span>
-      <span onClick={()=>navigate("/Contact")}>Contact</span>
-          </div>
-  )
+      <span onClick={() => navigate("/")}>Home</span>
+      <span onClick={() => navigate("/About")}>About</span>
+      <span onClick={() => navigate("/Contact")}>Contact</span>
+    </div>
+  );
 }
 
-export default Navlist
+export default Navlist;

@@ -1,13 +1,13 @@
+import style from "./HomeListItemB.module.css";
 import React from "react";
 import { useState } from "react";
 
 function HomeListItemB() {
   let [details, setDetails] = useState([
-    { id: 1, name: "sahiba",job:"A" },
-    { id: 2, name: "sana",job:"B" },
-    { id: 3, name: "sama" ,job:"C"},
+    { id: 1, name: "sahiba", job: "A" },
+    { id: 2, name: "sana", job: "B" },
+    { id: 3, name: "sama", job: "C" },
   ]);
-  
 
   let [details2, setDetails2] = useState([
     { id: 1, name: "name1" },
@@ -23,11 +23,11 @@ function HomeListItemB() {
       //   name: "newName",
       // };
       //or
-    // setDetails([
-  //details[0],
-  //{ id: 2, name: "New Name" },
-  //details[2]
-//]);
+      // setDetails([
+      //details[0],
+      //{ id: 2, name: "New Name" },
+      //details[2]
+      //]);
     });
     setDetails(newDetails);
   };
@@ -39,17 +39,16 @@ function HomeListItemB() {
     setDetails2(updatedlistItem);
   };
 
-  let UpdateJob = ()=>{
-    let newjob = details.map((list)=>{
-      if(list.job === "C"){
-        return {...list,job:"A"}
-      }
-      else{
+  let UpdateJob = () => {
+    let newjob = details.map((list) => {
+      if (list.job === "C") {
+        return { ...list, job: "A" };
+      } else {
         return list;
       }
-    })
+    });
     setDetails(newjob);
-  }
+  };
 
   return (
     <div className=''>
@@ -58,7 +57,11 @@ function HomeListItemB() {
 
       <div>
         {details.map((detail) => {
-          return <li>{detail.name} job - {detail.job}</li>;
+          return (
+            <li>
+              {detail.name} job - {detail.job}
+            </li>
+          );
         })}
       </div>
 
@@ -71,9 +74,9 @@ function HomeListItemB() {
           );
         })}
       </div>
-       <button onClick={UpdateJob}>job update click</button>
-      <button onClick={updateData}>name update click</button>
-      <button onClick={RemoveListItem}> remove detail click</button>
+      <button onClick={UpdateJob} class={style.button}>job update click</button>
+      <button onClick={updateData} class={style.buttonColor}>name update click</button>
+      <button onClick={RemoveListItem} class={style.btnColor}> remove detail click</button>
     </div>
   );
 }
