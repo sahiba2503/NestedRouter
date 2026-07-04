@@ -1,4 +1,3 @@
-
 import React, { useState, useContext } from "react";
 import { userContext } from "../App";
 
@@ -14,12 +13,11 @@ function HomeListItemA() {
     const updatedNameList = name.map((val) => {
       if (val.id === key) {
         return {
-          id:val.id,       
+          id: val.id,
           name: "madam",
         };
-      } 
-else {
-     return val;
+      } else {
+        return val;
       }
     });
     setName(updatedNameList);
@@ -30,10 +28,7 @@ else {
       <h2>User Name</h2>
 
       {name.map((value) => (
-        <div
-          key={value.id}
-          onClick={() => updateName(value.id)}
-        >
+        <div key={value.id} onClick={() => updateName(value.id)}>
           {value.name}
         </div>
       ))}
@@ -45,10 +40,3 @@ else {
 }
 
 export default HomeListItemA;
-
-
-
-
-
-
-
