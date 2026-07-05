@@ -4,9 +4,10 @@ import Home from "./Component/Home";
 import About from "./Component/About";
 import Contact from "./Component/Contact";
 import SideNavbar from "./Component/SideNavbar";
-import HomeListItemA from "./Component/HomeListItemA";
-import HomeListItemB from "./Component/HomeListItemB";
-import HomeListItemC from "./Component/HomeListItemC";
+
+import Welcome from "./Welcome";
+import FeaturedServices from "./FeaturedServices";
+import HeroSection from "./HeroSection";
 
 function RouterContainer() {
   return (
@@ -14,11 +15,11 @@ function RouterContainer() {
       <SideNavbar />
       <Routes>
         <Route path='/' element={<Home />}>
-          <Route index element={<HomeListItemA />} />
+          <Route index element={<HeroSection />} />
 
-          <Route path='aaa' element={<HomeListItemA />} />
-          <Route path='bbb' element={<HomeListItemB />} />
-          <Route path='ccc' element={<HomeListItemC />} />
+          <Route path='heroSection' element={<HeroSection />} />
+          <Route path='welcome' element={<Welcome />} />
+          <Route path='featuredServices' element={<FeaturedServices />} />
         </Route>
 
         <Route path='/About' element={<About />}></Route>

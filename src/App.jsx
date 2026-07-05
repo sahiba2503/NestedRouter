@@ -18,3 +18,6 @@ function App() {
 }
 
 export default App;
+//home - heroSection,welcome, featured services
+//about - our story, company, history, mission
+//contact - contact us, send message, Email us

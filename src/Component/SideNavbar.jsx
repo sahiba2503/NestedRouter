@@ -6,9 +6,9 @@ function SideNavbar() {
   return (
     <div className='sideNavList'>
       <ul>
-        <li onClick={()=>{ navigate("/aaa") }}>aaaaaa</li>
-        <li onClick={()=>{ navigate("/bbb") }}>bbbbbb</li>
-        <li onClick={()=>{ navigate("/ccc") }}>cccccc</li>
+        <li onClick={()=>{ navigate("/heroSection") }}>heroSection</li>
+        <li onClick={()=>{ navigate("/welcome") }}>welcome</li>
+        <li onClick={()=>{ navigate("/featuredServices") }}>featuredServices</li>
       </ul>
     </div>
   )
