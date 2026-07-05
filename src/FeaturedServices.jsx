@@ -1,5 +1,3 @@
-
-
 import React from "react";
 
 function FeaturedServices() {
@@ -65,4 +63,3 @@ function FeaturedServices() {
 }
 
 export default FeaturedServices;
-

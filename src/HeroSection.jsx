@@ -1,6 +1,3 @@
-
-
-
 import React, { useState, useContext } from "react";
 import { userContext } from "./App";
 
@@ -43,4 +40,3 @@ function HeroSection() {
 }
 
 export default HeroSection;
-
