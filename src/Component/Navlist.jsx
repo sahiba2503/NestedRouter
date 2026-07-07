@@ -9,6 +9,6 @@ function Navlist() {
       <span onClick={() => navigate("/Contact")}>Contact</span>
     </div>
   );
-}
+}                                 
 
 export default Navlist;
