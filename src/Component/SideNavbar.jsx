@@ -1,65 +1,77 @@
-// // import React from "react";
-// // import { useNavigate } from "react-router-dom";
-
-// // function SideNavbar() {
-// //   let navigate = useNavigate();
-// //   return (
-// //     <div className='sideNavList'>
-// //       <ul>
-// //         <li
-// //           onClick={() => {
-// //             navigate("/heroSection");
-// //           }}
-// //         >
-// //           heroSection
-// //         </li>
-// //         <li
-// //           onClick={() => {
-// //             navigate("/welcome");
-// //           }}
-// //         >
-// //           welcome
-// //         </li>
-// //         <li
-// //           onClick={() => {
-// //             navigate("/featuredServices");
-// //           }}
-// //         >
-// //           featuredServices
-// //         </li>
-// //       </ul>
-// //     </div>
-// //   );
-// // }
-
-// // export default SideNavbar;
-// import React from 'react'
-// import {useLocation} from "react-router-dom";
+// import React from "react";
+// import { useLocation, useNavigate } from "react-router-dom";
 
 // function SideNavbar() {
-//   const pathname = useLocation();
+//   const  {pathname } = useLocation();
+//   const navigate = useNavigate();
+
 //   let list = [];
-//   if(pathname === "/"){
-//     list = ["heroSection" , "welcome" , "featuredServices"];
+
+//  if (pathname.startsWith("/Home")) {
+//     list = ["heroSection", "welcome", "featuredServices"];
 //   }
-//   else if(pathname === "/Contact"){
-//     list = ["Emial", "Pone", "Support"];
+//   else if (pathname.startsWith("/Contact")) {
+//     list = ["Email", "Phone", "Support"];
 //   }
-//   else if(pathname === "/About"){
-//     list = ["Profile", "Settings","History"];
+//   else if (pathname.startsWith("/About")) {
+//     list = ["Profile", "Settings", "History"];
 //   }
+
 //   return (
 //     <div>
 //       <ul>
-// {list.map((item,index)=>(
-//   <li key={index}>{item}</li>
-// ))}
+//         {list.map((item, index) => (
+//           <li
+//             key={index}
+//             onClick={() => navigate(item)}
+//           >
+//             {item}
+//           </li>
+//         ))}
 //       </ul>
 //     </div>
-//   )
+//   );
 // }
 
-// export default SideNavbar
+// export default SideNavbar;
+
+// import React from "react";
+// import { useLocation, useNavigate } from "react-router-dom";
+
+// function SideNavbar() {
+//   const { pathname } = useLocation();
+//   const navigate = useNavigate();
+
+//   let list = [];
+
+//   if (pathname.startsWith("/Home")) {
+//     list = ["heroSection", "welcome", "featuredServices"];
+//   } else if (pathname.startsWith("/About")) {
+//     list = ["Profile", "Settings", "History"];
+//   } else if (pathname.startsWith("/Contact")) {
+//     list = ["Email", "Phone", "Support"];
+//   }
+
+//   // Get parent route (Home, About, Contact)
+//   const parentPath = pathname.split("/")[1];
+
+//   return (
+//     <div>
+//       <ul>
+//         {list.map((item, index) => (
+//           <li
+//             key={index}
+//             onClick={() => navigate(`/${parentPath}/${item}`)}
+//           >
+//             {item}
+//           </li>
+//         ))}
+//       </ul>
+//     </div>
+//   );
+// }
+
+// export default SideNavbar;
 
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -69,25 +81,24 @@ function SideNavbar() {
   const navigate = useNavigate();
 
   let list = [];
+  let parentPath = "";
 
-  if (pathname === "/Home") {
+  if (pathname.startsWith("/Home")) {
+    parentPath = "/Home";
     list = ["heroSection", "welcome", "featuredServices"];
-  } 
-  if (pathname === "/Contact") {
-    list = ["Email", "Phone", "Support"];
-  }
-   if (pathname === "/About") {
+  } else if (pathname.startsWith("/About")) {
+    parentPath = "/About";
     list = ["Profile", "Settings", "History"];
+  } else if (pathname.startsWith("/Contact")) {
+    parentPath = "/Contact";
+    list = ["Email", "Phone", "Support"];
   }
 
   return (
     <div>
       <ul>
-        {list.map((item, index) => (
-          <li
-            key={index}
-            onClick={() => navigate(`/${item}`)}            
-          >
+        {list.map((item) => (
+          <li key={item} onClick={() => navigate(`${parentPath}/${item}`)}>
             {item}
           </li>
         ))}

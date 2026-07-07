@@ -3,6 +3,7 @@
 import style from "./Component/Welcome.module.css";
 import React from "react";
 import { useState } from "react";
+import { Outlet } from "react-router-dom";
 
 function Welcome() {
   let [details, setDetails] = useState([
