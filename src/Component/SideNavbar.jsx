@@ -70,11 +70,13 @@ function SideNavbar() {
 
   let list = [];
 
-  if (pathname === "/") {
+  if (pathname === "/Home") {
     list = ["heroSection", "welcome", "featuredServices"];
-  } else if (pathname === "/contact") {
+  } 
+  if (pathname === "/Contact") {
     list = ["Email", "Phone", "Support"];
-  } else if (pathname === "/about") {
+  }
+   if (pathname === "/About") {
     list = ["Profile", "Settings", "History"];
   }
 

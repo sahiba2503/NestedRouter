@@ -14,7 +14,7 @@ function RouterContainer() {
     <div className='routerContainer'>
       <SideNavbar />
       <Routes>
-        <Route path='/' element={<Home />}>
+        <Route path='/Home' element={<Home />}>
           <Route index element={<HeroSection />} />
 
           <Route path='heroSection' element={<HeroSection />} />

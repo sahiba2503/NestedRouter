@@ -4,7 +4,7 @@ function Navlist() {
   let navigate = useNavigate();
   return (
     <div className='navList'>
-      <span onClick={() => navigate("/")}>Home</span>
+      <span onClick={() => navigate("/Home")}>Home</span>
       <span onClick={() => navigate("/About")}>About</span>
       <span onClick={() => navigate("/Contact")}>Contact</span>
     </div>
