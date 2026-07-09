@@ -3,6 +3,9 @@ import React, { useState } from "react";
 function About() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [ num , setNum] = useState(0);
+
+ 
 
    const [fruits, setFruits] = useState(["Apple", "Banana"]);
   const [user, setUser] = useState({
@@ -17,10 +20,11 @@ function About() {
     setName("");
     setEmail("");
   };
+  
 
   return (
     <div>
-      hellow About
+      hellow About  time 
       <form onSubmit={handleSubmit}>
         <h2>React Form Example</h2>
         <input
@@ -54,6 +58,8 @@ function About() {
 <button onClick={() =>   setFruits([...fruits, "Mango"])      } >
         Add Mango
       </button>
+      <button onClick={()=> setNum((prev)=>{
+        return num + 1 })}> {num} click btn time</button>
     </div>
   );
 }
