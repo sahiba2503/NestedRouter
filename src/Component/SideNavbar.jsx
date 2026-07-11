@@ -13,10 +13,12 @@ function SideNavbar() {
   if (pathname.startsWith("/Home")) {
     parentPath = "/Home";
     list = ["heroSection", "welcome", "featuredServices"];
-  } else if (pathname.startsWith("/About")) {
+  } 
+  else if (pathname.startsWith("/About")) {
     parentPath = "/About";
     list = ["Profile", "Settings", "History"];
-  } else if (pathname.startsWith("/Contact")) {
+  }
+   else if (pathname.startsWith("/Contact")) {
     parentPath = "/Contact";
     list = ["Email", "Phone", "Support"];
   }
@@ -25,7 +27,9 @@ function SideNavbar() {
     <div>
       <ul>
         {list.map((item) => (
-          <li key={item} onClick={() => navigate(`${parentPath}/${item}`)}>
+          <li key={item} onClick={() => navigate(`${parentPath}/${item}`)}
+          className={location.pathname.endsWith(item) ? "active-link" : "link"}
+          >
             {item}
           </li>
         ))}

@@ -13,8 +13,7 @@ function App() {
   useEffect(()=>{
     if(location.pathname.endsWith("/"))
       navigate("Home");
-    }
-  )
+    },[location.pathname, navigate]  )
   
  
 

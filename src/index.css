@@ -18,3 +18,16 @@ margin-right: 2rem;
     width: 25%;
     height: 95vh;
 }
+
+.link {
+  padding: 10px 20px;
+  text-decoration: none;
+  color: rgb(196, 195, 195);
+}
+
+.active-link {
+  padding: 10px 20px;
+  background-color: blue;
+  color: red;
+  border-radius: 5px;
+}
