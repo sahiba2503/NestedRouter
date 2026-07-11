@@ -12,6 +12,9 @@ import SideNavbar from "./Component/SideNavbar";
 import HeroSection from "./HeroSection";
 import Welcome from "./Welcome";
 import FeaturedServices from "./FeaturedServices";
+import { Navigate } from "react-router-dom";
+import Email from "./Component/Email";
+import Profile from "./Component/Profile";
 
 function RouterContainer() {
   return (
@@ -20,16 +23,24 @@ function RouterContainer() {
 
       <Routes>
 
-        <Route path="/Home" element={<Home />}>
-          <Route index element={<HeroSection />} />
-          <Route path="heroSection" element={<HeroSection />} />
+        <Route path="/Home" element={<Home />}>          
+          <Route index element={<Navigate to="HeroSection" replace/>} />
+
+          <Route path="HeroSection" element={<HeroSection />} />
           <Route path="welcome" element={<Welcome />} />
           <Route path="featuredServices" element={<FeaturedServices />} />
         </Route>
 
-        <Route path="/About" element={<About />} />
+<Route path="/About" element={<About />}>
+    <Route index element={<Navigate to="Profile" replace />} />
+    <Route path="Profile" element={<Profile />} />
+</Route>
 
-        <Route path="/Contact" element={<Contact />} />
+<Route path="/Contact" element={<Contact />}>
+    <Route index element={<Navigate to="Email" replace />} />
+    <Route path="Email" element={<Email />} />
+</Route>        
+
 
       </Routes>
     </div>
@@ -37,3 +48,12 @@ function RouterContainer() {
 }
 
 export default RouterContainer;
+
+{/* <Route path="/About" element={<About />} >
+        <Route index element={<Navigate to="/About/Profile"/>} />
+        <Route path="Profile" element={<Profile/>}/>
+       </Route>
+
+        <Route path="/Contact" element={<Contact />} >
+        <Route index element={<Navigate to="/Contact/Email"/>} />
+        <Route path="Email" element={<Email/>}/> */}

@@ -5,7 +5,7 @@ import React from "react";
 function HeroSection() {
   return (
     <div>
-      <h2>This is Hero Section</h2>
+      <h2>This is Hero sec</h2>
     </div>
   );
 }

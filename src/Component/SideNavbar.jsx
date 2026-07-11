@@ -2,6 +2,8 @@
 
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import Profile from "./Profile";
+import Email from "./Email";
 
 function SideNavbar() {
   const { pathname } = useLocation();
@@ -12,7 +14,7 @@ function SideNavbar() {
 
   if (pathname.startsWith("/Home")) {
     parentPath = "/Home";
-    list = ["heroSection", "welcome", "featuredServices"];
+    list = ["HeroSection", "Welcome", "FeaturedServices"];
   } 
   else if (pathname.startsWith("/About")) {
     parentPath = "/About";

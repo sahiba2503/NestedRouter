@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Outlet } from "react-router-dom";
 
 function About() {
   const [name, setName] = useState("");
@@ -60,6 +61,8 @@ function About() {
       </button>
       <button onClick={()=> setNum((prev)=>{
         return num + 1 })}> {num} click btn time</button>
+
+        <Outlet/>
     </div>
   );
 }
